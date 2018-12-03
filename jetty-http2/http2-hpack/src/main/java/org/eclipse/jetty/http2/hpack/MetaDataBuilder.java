@@ -208,15 +208,16 @@ public class MetaDataBuilder
 
     protected boolean checkPseudoHeader(HttpHeader header, Object value)
     {
-        if (_fields.size()>0)
-        {
-            streamException("Pseudo header %s after fields", header.asString());
-            return false;
-        }
-        if (value==null)
-            return true;
-        streamException("Duplicate pseudo header %s", header.asString());
-        return false;
+        return true;
+//        if (_fields.size()>0)
+//        {
+//            streamException("Pseudo header %s after fields", header.asString());
+//            return false;
+//        }
+//        if (value==null)
+//            return true;
+//        streamException("Duplicate pseudo header %s", header.asString());
+//        return false;
     }
 
     public MetaData build() throws HpackException.StreamException
